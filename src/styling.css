@@ -1,0 +1,115 @@
+@media all {
+    /*Alle grundlegenden Farbeinstellungen und geräteübergreifende Eigenschaften hier eintragen*/
+    body{
+        background-color: lightblue;
+        overflow-x:hidden;
+    }
+    
+    .Kompass{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .Streifen_Container{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+    }
+}
+
+@media screen and (max-width: 4096px) {
+    /*Bildschirm bis 4K*/
+    .StreifenCovered {
+        background-color:cornsilk;
+        height: 800px;
+        width: 900px;
+        
+        
+    }
+}
+
+@media screen and (max-width: 1920px){
+    /*Für Tablet*/
+    body{
+        background-color: green;
+    }
+    .Kompass{
+        
+        margin-top: -45px;
+        margin-left: 50px;
+    }
+    .KarteninhaltCovered {
+        background-color:cornsilk;
+        height: 400px;
+        width: 200px;
+    }
+    .Kompassstreifen_Active{
+        width: 100%;
+        height: 100%;
+    }
+    .LeftGrid{
+        width: 50;
+    }
+    .MiddleGrid{
+        
+    }   
+    .RightGrid{
+        width: 25%;
+    }
+}
+
+/*Smartphone Anpassungen. Es wird größtenteils nach Breite des Bildschirms unterschieden.
+Zusätzlich sind Unterscheidungen und entsprechende weitere Anpassungen nach Höhen angedacht.*/
+@media screen and (max-width: 360px){
+    /*Für Smartphone*/
+    body{
+        background-color: black;
+        overflow-x: hidden;
+        height: 500px;
+        width: 336px;
+    }
+    .Kompassstreifen_Active{
+        margin-top: -15px;
+        margin-left: -50px;
+        align-self: center;
+        width: 335px;
+        align-self: center;
+        
+        max-height: 400px;
+    }
+    .Karteninhalt{
+        overflow-y: scroll;
+        max-height: 400px;
+    }
+    .Kompassstreifen_Hidden{
+        
+        display: none;
+        /*overflow: hidden;*/
+    }
+    .LeftGrid{
+        display: none;
+    }
+    .MiddleGrid{
+        align-self: center;
+        align-content: center;
+    }
+    .RightGrid{
+        display:none;
+    }
+}
+
+
+
+

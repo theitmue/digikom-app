@@ -1,0 +1,33 @@
+.Oberflaeche {
+    background: radial-gradient(whitesmoke, black);
+    
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.Kompass {
+    position: relative;
+    
+    height: 1000px;
+    width: 1920px;
+    left: 200px;
+}
+.HeaderButtons {
+    align-self: center;
+    
+    align-content: center;
+    
+}
+
+.Button {
+    width: 150px;
+    
+}
+
+.Kompassstreifen {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    
+}
+

@@ -1,0 +1,49 @@
+.Streifen {
+    
+    
+    background-color: whitesmoke;
+    height: 500px;
+    width: 500px;
+    grid-column: 1;
+    grid-row: 1;
+    
+    
+}
+
+.Karteninhalt {
+    overflow-y: scroll;
+    max-height: 800px;
+    transform-origin: inherit;
+    
+}
+
+
+.Streifenkarte {
+    transform-origin: inherit;
+}
+
+
+
+
+.StreifenCovered {
+    
+    position:relative;
+    background-color: black;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    
+    
+}
+
+.KarteninhaltCovered {
+    background-color:cornsilk;
+    height: 800px;
+    width: 900px;
+    transform-origin: inherit;
+    
+}
+
+.StreifenkarteCovered {
+    transform-origin: inherit;
+}
