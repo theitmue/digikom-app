@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
+//import Grid from '@material-ui/core/Grid';
 
 import axios from 'axios';
 import { motion } from 'framer-motion';
@@ -11,7 +11,7 @@ import Streifen from './Streifen';
 import Thema from './Thema.jsx';
 import NavDrawer from './Drawer.jsx';
 //import './Kompass.css';
-import './styling.css';
+import './style.css';
 
 /*
     TODO:   X   Themenanzahl dynamisieren
@@ -152,7 +152,7 @@ export default class Kompass extends React.Component {
                 
                 neueDaten.push(
                     {
-                        id: i,
+                        id: serverResponse.data[i].id,
                         rotID: i%rotationen.length,
                         tema: new Thema(
                             serverResponse.data[i].Titel,
@@ -161,13 +161,16 @@ export default class Kompass extends React.Component {
                             serverResponse.data[i].Acordeon, 
                             serverResponse.data[i].Refs
                             ),
-                        rotation: rotationen[i%rotationen.length],
-                        activo: i==0 ? true : false,
-                        z: serverResponse.data.length-(i+1),
+                        rotation: rotationen[(serverResponse.data[i].id-1)%rotationen.length],
+                        activo: (serverResponse.data[i].id-1)==0 ? true : false,
+                        z: serverResponse.data.length-(serverResponse.data[i].id),
                     }
                 );
             }
-            
+            console.log(neueDaten);
+            neueDaten.sort((a,b) => a.id > b.id);
+            console.log('Nach Sortierung');
+            console.log(neueDaten);
             this.setState({
                 rotations_array: rotationen, 
                 daten: neueDaten,
@@ -220,21 +223,22 @@ export default class Kompass extends React.Component {
     render(){
         return(
             <div className='Oberflaeche'>
-            <Grid container className="GridBackground" spacing={8}>
-                <Grid className='GridBackground' item xs={12}>
+            {/*<Grid container className="GridBackground" spacing={8}>
+                <Grid className='GridBackground' item xs={12}>*/}
                     <motion.div
                         animate = {{
-                            zIndex: 42,
+                            zIndex: 108,
                         }}
+                        className="Nav"
                         >
                         <NavDrawer
                             buttonNamen = {this.makeTitels()}
                             action = {(m, e) => this.clickHandler(m, e)}
                         />
                     </motion.div>                    
-                </Grid>
+                {/*</Grid>
                 <Grid className = "LeftGrid" item xs={3}></Grid>
-                <Grid className = "MiddleGrid" item xs={6}>
+                <Grid className = "MiddleGrid" item xs={6}>*/}
                     <motion.div className = 'Kompass'>
                         {this.state.daten.map(data =>
                             <motion.div 
@@ -254,9 +258,9 @@ export default class Kompass extends React.Component {
                             </motion.div>
                         )} 
                     </motion.div>   
-                </Grid>
+                {/*</Grid>
                 <Grid className = "RightGrid" item xs={3}></Grid>
-            </Grid>        
+                </Grid>*/}        
         </div>
         );
     }

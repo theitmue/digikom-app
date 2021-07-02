@@ -18,7 +18,7 @@ import { motion } from 'framer-motion';
 
 import Akkordeon from './Akkordeon.jsx';
 import Thema from './Thema.jsx'
-import './styling.css';
+import './style.css';
 
 export default class Streifen extends React.Component {
   defaultProps = {
@@ -85,7 +85,7 @@ export default class Streifen extends React.Component {
             <CardActions>
               <motion.div
                 whileHover = {{scale: 1.1}}>
-                  <Button onClick = {this.handleClickOpen} variant='contained' color='primary'>Aprende más</Button>
+                  <Button onClick = {this.handleClickOpen} variant='contained' color='primary'>Mehr erfahren</Button>
               </motion.div>
               <Dialog
                 open={this.state.open}
@@ -110,12 +110,12 @@ export default class Streifen extends React.Component {
               <motion.div
                 whileHover= {{scale: 1.1}}
               >
-                  <Button variant='contained' color='secondary' onClick={(e) => this.props.action('-', e)}> Anterior </Button>
+                  <Button variant='contained' color='secondary' onClick={(e) => this.props.action('-', e)}> Vorheriger </Button>
               </motion.div>
               <motion.div
                 whileHover={{scale: 1.1}}
               >
-                  <Button variant='contained' color='secondary' onClick={(e) => this.props.action('+', e)}> Próximo </Button>
+                  <Button variant='contained' color='secondary' onClick={(e) => this.props.action('+', e)}> Nächster </Button>
               </motion.div>
             </CardActions>
         </Card>

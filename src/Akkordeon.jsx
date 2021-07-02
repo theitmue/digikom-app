@@ -4,7 +4,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import ReactMarkdown from 'react-markdown';
-import './styling.css';
+import './style.css';
 
 export default function Akkordeon(props) {
     return(

@@ -3,7 +3,7 @@ import {AppBar, Toolbar, Typography, Button, Drawer, IconButton} from '@material
 import { Menu } from '@material-ui/icons';
 import Divider from '@material-ui/core/Divider';
 
-import './styling.css';
+import './style.css';
 
 export default function NavDrawer(props) {
     const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ export default function NavDrawer(props) {
                     <IconButton onClick={handleDrawer} color = 'inherit' edge='start' aria-label='menu'>
                         <Menu />
                     </IconButton>
-                    <Typography variant="h6" >Digikom-App</Typography>
+                    <Typography variant="h6" >Digikom-App b0.3.2m</Typography>
                 </Toolbar>
             </AppBar>
             

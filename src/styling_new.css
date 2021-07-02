@@ -1,0 +1,416 @@
+body{
+    background-color:lightblue;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+/*.Kompass{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}*/
+/*
+.Nav{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    
+}
+.Streifen_Container{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    
+}
+.Kompassstreifen_Active{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    
+}
+.Kompassstreifen_Hidden{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    
+}
+*/
+@media screen and (orientation:portrait){
+    .Kompass{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Nav{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Streifen_Container{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    body{
+        background-color: pink;
+        
+    }
+    .Kompassstreifen_Hidden{
+        display: none;
+    }
+}
+@media screen and ((max-width: 395px) and (orientation: portrait)){
+    /*Normale Smartphones*/
+    .Kompass{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Nav{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Streifen_Container{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    body{
+        background-color: black;
+        height: 700px;
+    }
+    .Kompassstreifen_Hidden{
+        display: none;
+    }
+    .Kompassstreifen_Active{
+        margin-left: 2%;
+        margin-right: 2%;
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Streifen{
+        transform-origin: top left;
+        transform: scale(0.87);
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Karteninhalt{
+        overflow-y: scroll;
+        height: 500px;
+        max-height: 500px;
+    }
+    
+}
+
+@media screen and (((min-width: 368px) and (max-width:1024px)) and (orientation: portrait)){
+    /*iPad
+    Eventuell nochmals unterteilen in kleinere und größere, um die Streifenhöhe anzupassen.
+    */
+    .Kompass{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Nav{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Streifen_Container{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    body{
+        background-color: grey;
+        height: 1024px;
+    }
+    .Kompassstreifen_Hidden{
+        display: none;
+    }
+    .Kompassstreifen_Active{
+        margin-top: 2%;
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Streifen{
+        transform-origin: top left;
+        transform: scale(1);
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Karteninhalt{
+        overflow-y: scroll;
+        height: 800px;
+        max-height: 800px;
+    }
+    
+}
+
+@media screen and (((min-width: 850px) and (max-width:1024px)) and (orientation: portrait)){
+    /*iPad
+    Eventuell nochmals unterteilen in kleinere und größere, um die Streifenhöhe anzupassen.
+    */
+    .Kompass{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Nav{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Streifen_Container{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;   
+    }
+
+    body{
+        background-color: grey;
+        height: 1024px;
+    }
+    .Kompassstreifen_Hidden{
+        display: none;
+    }
+    .Kompassstreifen_Active{
+        margin-top: 2%;
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Streifen{
+        transform-origin: top left;
+        transform: scale(1);
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Karteninhalt{
+        overflow-y: scroll;
+        height: 1100px;
+        max-height: 1100px;
+    }
+    
+}
+
+@media screen and ((min-width: 1024px) and (orientation:portrait)){
+    /*großes Smartphone IPHone
+    Eventuell nochmals unterteilen in kleinere und größere, um die Streifenhöhe anzupassen.
+    */
+    .Kompass{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Nav{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Streifen_Container{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 1;
+        grid-column-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 1;   
+    }
+
+    body{
+        background-color: grey;
+        height: 1024px;
+    }
+    .Kompassstreifen_Hidden{
+        display: none;
+    }
+    .Kompassstreifen_Active{
+        margin-top: 2%;
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Streifen{
+        transform-origin: top left;
+        transform: scale(1);
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Karteninhalt{
+        overflow-y: scroll;
+        height: 1100px;
+        max-height: 1100px;
+    }
+    
+}
+
+@media screen and (min-width: 1025px) {
+    .Kompass{
+        position: relative;
+        margin-top: 2%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+    .Nav{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Streifen_Container{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Active{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        
+    }
+    .Kompassstreifen_Hidden{
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 1;   
+    }
+    
+    body{
+        background:radial-gradient(black, white);
+        height: 1024px;
+    }
+    .Kompassstreifen_Hidden{
+        
+    }
+    .KarteninhaltCovered{
+        height: 800px;
+        background-color: blanchedalmond;
+    }
+    .Kompassstreifen_Active{
+        
+        height: 100%;
+        max-height: 100%;
+        
+    }
+    .Streifen{
+        transform-origin: center center;
+        transform: scale(1);
+        height: 100%;
+        
+        max-height: 100%;
+        
+    }
+    .Karteninhalt{
+        overflow-y: scroll;
+        
+        height: 800px;
+        max-height: 800px;
+    }  
+} 
+

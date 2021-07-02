@@ -72,21 +72,32 @@
 
 /*Smartphone Anpassungen. Es wird größtenteils nach Breite des Bildschirms unterschieden.
 Zusätzlich sind Unterscheidungen und entsprechende weitere Anpassungen nach Höhen angedacht.*/
-@media screen and (max-width: 360px){
+@media screen and (max-width: 380px){
     /*Für Smartphone*/
     body{
         background-color: black;
-        overflow-x: hidden;
-        height: 500px;
-        width: 336px;
+        overflow-x: hidden;        
     }
+    
+    .LeftGrid{
+        display: none;
+    }
+    .MiddleGrid{
+        align-self: center;
+        align-content: center;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .RightGrid{
+        display:none;
+    }
+
     .Kompassstreifen_Active{
         margin-top: -15px;
         margin-left: -50px;
-        align-self: center;
-        width: 335px;
-        align-self: center;
         
+        width: 345px;
+                
         max-height: 400px;
     }
     .Karteninhalt{
@@ -98,16 +109,7 @@ Zusätzlich sind Unterscheidungen und entsprechende weitere Anpassungen nach Hö
         display: none;
         /*overflow: hidden;*/
     }
-    .LeftGrid{
-        display: none;
-    }
-    .MiddleGrid{
-        align-self: center;
-        align-content: center;
-    }
-    .RightGrid{
-        display:none;
-    }
+    
 }
 
 

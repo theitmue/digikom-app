@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import './index.css';
-import './styling.css';
+import './style.css';
 
 import Kompass from './Kompass';
 import reportWebVitals from './reportWebVitals';

@@ -1,5 +1,5 @@
 import CircularProgress from '@material-ui/core/CircularProgress'
-import './styling.css';
+import './style.css';
 
 export default class Thema {
     defaultProps = {
