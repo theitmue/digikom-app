@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/digikom-app/static/css/main.60f3437c.chunk.css",
-    "main.js": "/digikom-app/static/js/main.71c4b39e.chunk.js",
-    "main.js.map": "/digikom-app/static/js/main.71c4b39e.chunk.js.map",
+    "main.css": "/digikom-app/static/css/main.d9dc43f5.chunk.css",
+    "main.js": "/digikom-app/static/js/main.5dd532be.chunk.js",
+    "main.js.map": "/digikom-app/static/js/main.5dd532be.chunk.js.map",
     "runtime-main.js": "/digikom-app/static/js/runtime-main.18df057d.js",
     "runtime-main.js.map": "/digikom-app/static/js/runtime-main.18df057d.js.map",
     "static/js/2.b1241987.chunk.js": "/digikom-app/static/js/2.b1241987.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.be508bbf.chunk.js": "/digikom-app/static/js/3.be508bbf.chunk.js",
     "static/js/3.be508bbf.chunk.js.map": "/digikom-app/static/js/3.be508bbf.chunk.js.map",
     "index.html": "/digikom-app/index.html",
-    "static/css/main.60f3437c.chunk.css.map": "/digikom-app/static/css/main.60f3437c.chunk.css.map",
+    "static/css/main.d9dc43f5.chunk.css.map": "/digikom-app/static/css/main.d9dc43f5.chunk.css.map",
     "static/js/2.b1241987.chunk.js.LICENSE.txt": "/digikom-app/static/js/2.b1241987.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.18df057d.js",
     "static/js/2.b1241987.chunk.js",
-    "static/css/main.60f3437c.chunk.css",
-    "static/js/main.71c4b39e.chunk.js"
+    "static/css/main.d9dc43f5.chunk.css",
+    "static/js/main.5dd532be.chunk.js"
   ]
 }
