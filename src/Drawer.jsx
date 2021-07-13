@@ -18,7 +18,7 @@ export default function NavDrawer(props) {
                     <IconButton onClick={handleDrawer} color = 'inherit' edge='start' aria-label='menu'>
                         <Menu />
                     </IconButton>
-                    <Typography variant="h6" >Digikom-App b0.3.2m</Typography>
+                    <Typography variant="h6" >Digikom-App b0.4.1</Typography>
                 </Toolbar>
             </AppBar>
             
