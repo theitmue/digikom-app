@@ -125,7 +125,7 @@ export default class Streifen extends React.Component {
     } else {
       return (
         <div className='StreifenRueck'>
-        <Card className='StreifenRueck' variant='elevation' raised = 'true'>
+        <Card className='StreifenRueck' variant='elevation' raised = 'true' onClick={(e) => this.props.navigation(this.props.id-1, e)}>
             <div className='KarteninhaltCovered'>
               <CardActionArea>
                 <CardMedia/>

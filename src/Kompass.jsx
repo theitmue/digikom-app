@@ -251,9 +251,11 @@ export default class Kompass extends React.Component {
                                 className= {data.activo ? 'Kompassstreifen_Active' : 'Kompassstreifen_Hidden'}//evtl als Streifenklasse verwenden
                             >
                                 <Streifen
+                                    id = {data.id}
                                     thema={data.tema}
                                     active={data.activo}
-                                    action = {(m, e) => this.handleSwitchButton(m, e)}                            
+                                    action = {(m, e) => this.handleSwitchButton(m, e)}
+                                    navigation = {(m, e) => this.clickHandler(m, e)}                            
                                 />   
                             </motion.div>
                         )} 
