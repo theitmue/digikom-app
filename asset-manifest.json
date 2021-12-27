@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/digikom-app/static/css/main.29f4b6b2.chunk.css",
-    "main.js": "/digikom-app/static/js/main.c880290f.chunk.js",
-    "main.js.map": "/digikom-app/static/js/main.c880290f.chunk.js.map",
+    "main.js": "/digikom-app/static/js/main.363da051.chunk.js",
+    "main.js.map": "/digikom-app/static/js/main.363da051.chunk.js.map",
     "runtime-main.js": "/digikom-app/static/js/runtime-main.bc85d134.js",
     "runtime-main.js.map": "/digikom-app/static/js/runtime-main.bc85d134.js.map",
     "static/js/2.6fb3130f.chunk.js": "/digikom-app/static/js/2.6fb3130f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.bc85d134.js",
     "static/js/2.6fb3130f.chunk.js",
     "static/css/main.29f4b6b2.chunk.css",
-    "static/js/main.c880290f.chunk.js"
+    "static/js/main.363da051.chunk.js"
   ]
 }
