@@ -15,9 +15,23 @@ body{
     
 }
 #root, .Oberflaeche{
-    height: 100vh;
-    max-height: 100vh;
+    height: 95vh;
+    max-height: 95vh;
     
+}
+footer{
+    height: 5vh;
+    z-index: 100;
+    background-color: grey;
+    font: 1em sans-serif;
+    color: white;
+}
+.drawer{
+    color: grey;
+}
+.DrawerButton{
+    width: 100%;
+    text-align: left;
 }
 
 @media screen and (orientation: portrait){

@@ -7,7 +7,9 @@ import './style.css';
 
 export default function NavDrawer(props) {
     const [open, setOpen] = useState(false);
-
+    const handleLinkClick = () => {
+        window.open(props.impressumlink)
+    }
     const handleDrawer = () => {
         setOpen(true);
     }
@@ -18,11 +20,12 @@ export default function NavDrawer(props) {
                     <IconButton onClick={handleDrawer} color = 'inherit' edge='start' aria-label='menu'>
                         <Menu />
                     </IconButton>
-                    <Typography variant="h6" >Digikom-App b0.5.1</Typography>
+                    <Typography variant="h6" >Digikom-App {props.version}</Typography>
                 </Toolbar>
             </AppBar>
             
             <Drawer
+                className="drawer"
                 anchor='left'
                 variant = 'temporary'
                 open={open}
@@ -32,13 +35,14 @@ export default function NavDrawer(props) {
                 <Divider/>
                 {props.buttonNamen.map(element => 
                     <div>
-                        <Button variant='contained' color = 'primary' onClick = {(e) => {
+                        <Button className="DrawerButton" variant='contained' color = 'primary' onClick = {(e) => {
                             props.action(element.ID, e);
                             setOpen(false);
                             }}>{element.Titel}</Button>
                         <Divider/>
                     </div>
                 )}
+                <Button variant="contained" color= "secondary" onClick={(e)=>handleLinkClick()}>Kontakt</Button>
             </Drawer>
         </div>
     );

@@ -1,7 +1,8 @@
 import React from 'react'
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import AppBar from '@material-ui/core/AppBar';
+import Box from '@mui/material/Box';
+//import Button from '@material-ui/core/Button';
+//import ButtonGroup from '@material-ui/core/ButtonGroup';
+//import AppBar from '@material-ui/core/AppBar';
 //import Grid from '@material-ui/core/Grid';
 
 import axios from 'axios';
@@ -12,6 +13,8 @@ import Thema from './Thema.jsx';
 import NavDrawer from './Drawer.jsx';
 //import './Kompass.css';
 import './style.css';
+import Button from '@material-ui/core/Button';
+import { width } from '@mui/system';
 
 /*
     TODO:   X   Themenanzahl dynamisieren
@@ -37,8 +40,11 @@ import './style.css';
 
 export default class Kompass extends React.Component {
 
-    //ATTRIBUTe
-    serverAdress = 'https://enigmatic-retreat-76246.herokuapp.com';
+    //ATTRIBUTE
+    //impressum_link = "https://omen.cs.uni-magdeburg.de/itiamsl/deutsch/home/index.html";
+    //serverAdress = 'localhost:1337';
+    impressum_link = this.props.impressum;
+    serverAdress = this.props.server;
     //Eigenschaften zur Justierung der Rotationsanimation, insb. Rotationsursprung -> hier in der Mitte.
     globalOriginX = 0.5; //0.5;
     globalOriginY= 0.5; //'450px';
@@ -140,10 +146,11 @@ export default class Kompass extends React.Component {
         
     UNSAFE_componentWillMount = async() => {
         try {
+            alert("HEllo World")
             const serverResponse = await axios.get(this.serverAdress+"/streifens");
+            alert("Hello World: " + serverResponse.data);
             var neueDaten= [];
             var rotationen = [];
-            
             for (let x = 0; x<this.rotStrCoeff;x++){
                 rotationen.push((x*(360/this.rotStrCoeff))%360);
             }
@@ -168,7 +175,7 @@ export default class Kompass extends React.Component {
                 );
             }
             console.log(neueDaten);
-            neueDaten.sort((a,b) => a.id > b.id);
+            neueDaten.sort((a,b) => (a.id > b.id) ? 1 : -1);
             console.log('Nach Sortierung');
             console.log(neueDaten);
             this.setState({
@@ -220,25 +227,27 @@ export default class Kompass extends React.Component {
         return nameArray;
     }
 
+    handleLinkClick = () => {
+        window.open(this.props.impressum);
+    }
+
     render(){
         return(
             <div className='Oberflaeche'>
-            {/*<Grid container className="GridBackground" spacing={8}>
-                <Grid className='GridBackground' item xs={12}>*/}
-                    <motion.div
-                        animate = {{
-                            zIndex: 108,
-                        }}
-                        className="Nav"
-                        >
-                        <NavDrawer
-                            buttonNamen = {this.makeTitels()}
-                            action = {(m, e) => this.clickHandler(m, e)}
-                        />
-                    </motion.div>                    
-                {/*</Grid>
-                <Grid className = "LeftGrid" item xs={3}></Grid>
-                <Grid className = "MiddleGrid" item xs={6}>*/}
+                <motion.div
+                    animate = {{
+                        zIndex: 108,
+                    }}
+                    className="Nav"
+                    >
+                    <NavDrawer
+                        buttonNamen = {this.makeTitels()}
+                        action = {(m, e) => this.clickHandler(m, e)}
+                        impressumlink = {this.props.impressum}
+                        version = {this.props.version}
+                    />
+                </motion.div>                    
+                
                     <motion.div className = 'Kompass'>
                         {this.state.daten.map(data =>
                             <motion.div 
@@ -260,10 +269,19 @@ export default class Kompass extends React.Component {
                             </motion.div>
                         )} 
                     </motion.div>   
-                {/*</Grid>
-                <Grid className = "RightGrid" item xs={3}></Grid>
-                </Grid>*/}        
-        </div>
+                
+                <footer>
+                    <motion.div>
+                        <Button
+                            variant='contained' 
+                            color='secondary'
+                            onClick={(e)=>this.handleLinkClick()}
+                        > 
+                            Kontakt 
+                        </Button>
+                    </motion.div>
+                </footer>        
+           </div>
         );
     }
 }

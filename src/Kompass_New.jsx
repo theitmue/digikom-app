@@ -14,7 +14,7 @@ import './Kompass.css';
 export default class Kompass extends React.Component {
 
     //ATTRIBUTE
-    serverAdress = 'http://192.168.2.118:1337';
+    serverAdress = 'http://192.168.2.115:1337';
    
     globalOriginX = 0.5;
     globalOriginY='450px';
