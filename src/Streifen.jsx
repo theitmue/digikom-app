@@ -46,8 +46,8 @@ export default class Streifen extends React.Component {
     super();
     props.thema ? this.thema = props.thema : this.thema = this.defaultProps.thema;
     props.active ? this.active = props.active : this.active=this.defaultProps.active;
-    console.log('New Streifen:');
-    console.log('ACTIVE?'+props.active);
+    //console.log('New Streifen:');
+    //console.log('ACTIVE?'+props.active);
   }
   
   render(){  

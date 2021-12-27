@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from '@mui/material/Box';
+//import Box from '@mui/material/Box';
 //import Button from '@material-ui/core/Button';
 //import ButtonGroup from '@material-ui/core/ButtonGroup';
 //import AppBar from '@material-ui/core/AppBar';
@@ -14,7 +14,7 @@ import NavDrawer from './Drawer.jsx';
 //import './Kompass.css';
 import './style.css';
 import Button from '@material-ui/core/Button';
-import { width } from '@mui/system';
+//import { width } from '@mui/system';
 
 /*
     TODO:   X   Themenanzahl dynamisieren
@@ -70,9 +70,9 @@ export default class Kompass extends React.Component {
     }
     
     //KONSTRUKTOR
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-    }
+    }*/
 
     //FUNKTIONEN
     //ClickHandler-Funktionen können zusammengefasst werden mit Zeile if-Abfrage nach '+' und '-'.
@@ -112,7 +112,20 @@ export default class Kompass extends React.Component {
     handleSwitchButton(m, e){
         /*m='+' für nächster oder '-' für voriger Streifen*/
         const workCopy = this.state.daten;
-        if(m=='+'){m=(this.state.aktiverStreifen+1)%workCopy.length;}else{m=((this.state.aktiverStreifen+(workCopy.length-1))%workCopy.length);}
+        
+        //console.log("Vor Switch");
+        //console.log(workCopy);
+        if(m==='+'){
+            //console.log("Nächster Streifen: "+((this.state.aktiverStreifen)+"\n"))
+            m=(this.state.aktiverStreifen+1)%(workCopy.length);
+            console.log("Nächster Streifen (m): "+m+"\n");
+            
+            
+        }
+        else{
+            m=((this.state.aktiverStreifen+(workCopy.length-1))%(workCopy.length));
+            console.log("Nächster Streifen (m): "+m+"\n");
+        }
         const rotID_target = this.state.daten[m].rotID;
         
         const rotCoeff = this.rotStrCoeff-rotID_target;
@@ -121,6 +134,7 @@ export default class Kompass extends React.Component {
         var aktStr = this.state.aktiverStreifen;
 
         for(let i=0; i<workCopy.length; i++){
+            //console.log("Daten: " +workCopy[i].rotID+"; "+workCopy[i].z+"; "+workCopy[i].activo);
             workCopy[i].rotID=(workCopy[i].rotID+rotCoeff)%this.rotStrCoeff;
             workCopy[i].rotation=this.state.rotations_array[workCopy[i].rotID];
             workCopy[i].z=(workCopy[i].z+zDifCoeff)%workCopy.length;
@@ -137,11 +151,18 @@ export default class Kompass extends React.Component {
         }
         aktStr=currentz;
         workCopy[aktStr].activo=true;
-        
+        console.log("Nach Switch:")
+        console.log(workCopy);
+        workCopy.forEach(element => {
+            console.log(element.id, element.z)
+        });
         this.setState({
             daten: workCopy,
             aktiverStreifen: aktStr,
         });
+        //console.log("Tatsächlich: "+this.state.daten);
+        //console.log("Daten nach Switch");
+        //console.log(this.state.daten);
     }
         
     UNSAFE_componentWillMount = async() => {
@@ -169,15 +190,20 @@ export default class Kompass extends React.Component {
                             serverResponse.data[i].Refs
                             ),
                         rotation: rotationen[(serverResponse.data[i].id-1)%rotationen.length],
-                        activo: (serverResponse.data[i].id-1)==0 ? true : false,
-                        z: serverResponse.data.length-(serverResponse.data[i].id),
+                        activo: (serverResponse.data[i].id-1)===0 ? true : false,
+                        //z: serverResponse.data.length-(serverResponse.data[i].id),
+                        z: serverResponse.data.length-i,
                     }
                 );
             }
             console.log(neueDaten);
             neueDaten.sort((a,b) => (a.id > b.id) ? 1 : -1);
-            console.log('Nach Sortierung');
-            console.log(neueDaten);
+            for(let i = 0; i<neueDaten.length; i=i+1){
+                neueDaten[i].id=i;
+                neueDaten[i].z=neueDaten.length-neueDaten[i].id;
+            }
+            //console.log('Nach Sortierung');
+            //console.log(neueDaten);
             this.setState({
                 rotations_array: rotationen, 
                 daten: neueDaten,
