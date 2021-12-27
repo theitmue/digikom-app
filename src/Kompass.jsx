@@ -146,9 +146,9 @@ export default class Kompass extends React.Component {
         
     UNSAFE_componentWillMount = async() => {
         try {
-            alert("HEllo World")
+            //alert("HEllo World")
             const serverResponse = await axios.get(this.serverAdress+"/streifens");
-            alert("Hello World: " + serverResponse.data);
+            //alert("Hello World: " + serverResponse.data);
             var neueDaten= [];
             var rotationen = [];
             for (let x = 0; x<this.rotStrCoeff;x++){
