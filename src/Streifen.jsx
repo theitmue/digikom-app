@@ -48,6 +48,7 @@ export default class Streifen extends React.Component {
     props.active ? this.active = props.active : this.active=this.defaultProps.active;
     //console.log('New Streifen:');
     //console.log('ACTIVE?'+props.active);
+    
   }
   
   render(){  
@@ -59,7 +60,9 @@ export default class Streifen extends React.Component {
               <CardActionArea>
                 <CardMedia
                 component = 'img'
-                  image = {process.env.PUBLIC_URL+this.thema.img}
+
+                  image = {this.props.thema.img.url}
+                  height = "200"
                   title = "Titelbild"
                 />
                 <CardContent>

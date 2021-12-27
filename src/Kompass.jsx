@@ -175,19 +175,20 @@ export default class Kompass extends React.Component {
             for (let x = 0; x<this.rotStrCoeff;x++){
                 rotationen.push((x*(360/this.rotStrCoeff))%360);
             }
-            console.log('Länge des Rotationsarrays: '+rotationen.length);
+            //console.log('Länge des Rotationsarrays: '+rotationen.length);
             for (let i = 0; i<serverResponse.data.length; i=i+1){
-                
+                if(serverResponse.data[i].Bild){console.log(this.props.server+serverResponse.data[i].Bild.url)}
                 neueDaten.push(
                     {
                         id: serverResponse.data[i].id,
                         rotID: i%rotationen.length,
                         tema: new Thema(
                             serverResponse.data[i].Titel,
-                            null, //Image
+                            serverResponse.data[i].Bild ? serverResponse.data[i].Bild : null, //Image
                             serverResponse.data[i].Beschreibung, 
                             serverResponse.data[i].Acordeon, 
-                            serverResponse.data[i].Refs
+                            serverResponse.data[i].Refs,
+                            this.serverAdress,
                             ),
                         rotation: rotationen[(serverResponse.data[i].id-1)%rotationen.length],
                         activo: (serverResponse.data[i].id-1)===0 ? true : false,
@@ -286,6 +287,7 @@ export default class Kompass extends React.Component {
                                 className= {data.activo ? 'Kompassstreifen_Active' : 'Kompassstreifen_Hidden'}//evtl als Streifenklasse verwenden
                             >
                                 <Streifen
+                                    apiUrl = {this.props.server}
                                     id = {data.id}
                                     thema={data.tema}
                                     active={data.activo}
