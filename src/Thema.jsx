@@ -14,9 +14,12 @@ export default class Thema {
     constructor(title, img, descr, acordeones, refs, apiUrl){
         title ? this.title = title : this.title = this.defaultProps.title;
         img ? this.apiUrl = apiUrl : this.apiUrl = this.defaultProps.apiUrl;
+        /*
+        //Diese Option aktivieren, sobald Bilder auch dauerhaft auf Server gespeichert werden können.
         img ? this.img = {
             url: apiUrl+img.url,
-        } : this.img = this.defaultProps.img;
+        } : this.img = this.defaultProps.img;*/
+        this.img = this.defaultProps.img; //Standardbild, solange Bilder noch nicht dauerhaft gespeichert werden können.
         descr ? this.descr = descr : this.descr = this.defaultProps.descr;
         acordeones ? this.acordeones = acordeones : this.acordeones = this.defaultProps.acordeones;
         refs ? this.refs = refs : this.refs = this.defaultProps.refs;

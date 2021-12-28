@@ -101,7 +101,9 @@ export default class Streifen extends React.Component {
                 </DialogTitle>
                 <DialogContent>
                   <DialogContentText id='alert-dialog-description'>
-                    {this.props.thema.refs}
+                    <ReactMarkdown>
+                      {this.props.thema.refs}
+                    </ReactMarkdown>
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
