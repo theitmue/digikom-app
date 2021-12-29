@@ -13,7 +13,7 @@ import reportWebVitals from './reportWebVitals';
 
 const backendAdress="https://digikom-backend.herokuapp.com";
 const impressumAdress = "https://omen.cs.uni-magdeburg.de/itiamsl/deutsch/home/index.html";
-const version = "b1.0.1"
+const version = "b1.0.2"
 
 ReactDOM.render(
   <React.StrictMode>

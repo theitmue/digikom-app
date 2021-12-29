@@ -49,7 +49,7 @@ export default class Kompass extends React.Component {
     globalOriginX = 0.5; //0.5;
     globalOriginY= 0.5; //'450px';
     
-    rotStrCoeff=7; //Wie viele Streifen gedreht sein sollen, damit bei großer Anzahl von Themen kein "Kreis" angenähert wird.
+    rotStrCoeff=9; //Wie viele Streifen gedreht sein sollen, damit bei großer Anzahl von Themen kein "Kreis" angenähert wird.
     
     
     state = {
@@ -202,6 +202,7 @@ export default class Kompass extends React.Component {
             for(let i = 0; i<neueDaten.length; i=i+1){
                 neueDaten[i].id=i;
                 neueDaten[i].z=neueDaten.length-neueDaten[i].id;
+                //neueDaten[i].rotation= rotationen[(neueDaten[i].id)%rotationen.length]
             }
             //console.log('Nach Sortierung');
             //console.log(neueDaten);
