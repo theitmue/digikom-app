@@ -2,16 +2,30 @@ import React, { useState } from 'react';
 import {AppBar, Toolbar, Typography, Button, Drawer, IconButton} from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 import Divider from '@material-ui/core/Divider';
+import Grid from '@mui/material/Grid';
 
 import './style.css';
 
 export default function NavDrawer(props) {
     const [open, setOpen] = useState(false);
+    const drawerStyle = {
+        color: "grey"
+    }
     const handleLinkClick = () => {
         window.open(props.impressumlink)
     }
     const handleDrawer = () => {
         setOpen(true);
+    }
+    const footerStyle = {
+        fontSize: "11px",
+        position: "absolute",
+        width: "100%",
+        bottom: "0",
+        height: "42px",
+        lineHeight: "42px",
+        color: "white",
+        textAlign: "center"
     }
     return(
         <div>
@@ -29,9 +43,9 @@ export default function NavDrawer(props) {
                 anchor='left'
                 variant = 'temporary'
                 open={open}
+                style = {drawerStyle}
                 onClose={() => {setOpen(false)}}
             >
-                <Typography variant="h4">Inhalt</Typography>
                 <Divider/>
                 {props.buttonNamen.map(element => 
                     <div>
@@ -43,6 +57,19 @@ export default function NavDrawer(props) {
                     </div>
                 )}
                 <Button variant="contained" color= "secondary" onClick={(e)=>handleLinkClick()}>Kontakt</Button>
+                <footer style={footerStyle}>
+                    <Grid container spacing={0}>
+                        <Grid item xs={3}>
+                            Unterstützt durch CySec 
+                        </Grid>
+                        <Grid item xs={5}>
+                            <a rel="noreferrer" target="_blank" href="https://omen.cs.uni-magdeburg.de/itiamsl/deutsch/impressum/index.html">Impressum</a> und <a rel="noreferrer" target="_blank" href="https://www.ovgu.de/datenschutzerklaerung.html">Datenschutz</a>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <a rel="noreferrer" target="_blank" href="https://forschung-sachsen-anhalt.de/">Forschungsportal Sachsen-Anhalt</a>
+                        </Grid>
+                    </Grid>
+                </footer>
             </Drawer>
         </div>
     );

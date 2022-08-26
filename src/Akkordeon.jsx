@@ -4,6 +4,7 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 import './style.css';
 
 export default function Akkordeon(props) {
@@ -18,7 +19,7 @@ export default function Akkordeon(props) {
                     <b>{props.titel}</b>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <ReactMarkdown>
+                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>
                         {props.inhalt}
                     </ReactMarkdown>
                 </AccordionDetails>

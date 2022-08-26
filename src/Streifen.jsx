@@ -14,6 +14,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from "rehype-raw";
 import { motion } from 'framer-motion';
 
 import Akkordeon from './Akkordeon.jsx';
@@ -70,7 +71,7 @@ export default class Streifen extends React.Component {
                           {this.props.thema.title}
                         </Typography>
                         <Typography variant='body2' >
-                          <ReactMarkdown>
+                          <ReactMarkdown rehypePlugins={[rehypeRaw]}>
                             {this.props.thema.descr}
                           </ReactMarkdown>
                         </Typography>
@@ -101,7 +102,7 @@ export default class Streifen extends React.Component {
                 </DialogTitle>
                 <DialogContent>
                   <DialogContentText id='alert-dialog-description'>
-                    <ReactMarkdown>
+                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>
                       {this.props.thema.refs}
                     </ReactMarkdown>
                   </DialogContentText>

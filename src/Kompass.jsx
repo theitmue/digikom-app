@@ -13,6 +13,7 @@ import Thema from './Thema.jsx';
 import NavDrawer from './Drawer.jsx';
 //import './Kompass.css';
 import './style.css';
+import Grid from '@mui/material/Grid';
 import Button from '@material-ui/core/Button';
 //import { width } from '@mui/system';
 
@@ -259,6 +260,18 @@ export default class Kompass extends React.Component {
         window.open(this.props.impressum);
     }
 
+    footerStyle = {
+        overflow: "hidden",
+        fontSize: "10px",
+        position: "absolute",
+        width: "100%",
+        bottom: "0",
+        height: "5vh",
+        lineHeight: "5vh",
+        color: "white",
+        textAlign: "center"
+    }
+
     render(){
         return(
             <div className='Oberflaeche'>
@@ -299,16 +312,24 @@ export default class Kompass extends React.Component {
                         )} 
                     </motion.div>   
                 
-                <footer>
-                    <motion.div>
-                        <Button
-                            variant='contained' 
-                            color='secondary'
-                            onClick={(e)=>this.handleLinkClick()}
-                        > 
-                            Kontakt 
-                        </Button>
-                    </motion.div>
+                <footer style={this.footerStyle}>
+                    <Grid container spacing={0}>
+                        <Grid item xs={3}>
+                            Unterstützt durch CySec 
+                        </Grid>
+                        <Grid item xs={2}>
+                            <a rel="noreferrer" target="_blank" href={this.props.impressum}>Kontakt</a>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <a rel="noreferrer" target="_blank" href="https://omen.cs.uni-magdeburg.de/itiamsl/deutsch/impressum/index.html">Impressum</a>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <a rel="noreferrer" target="_blank" href="https://www.ovgu.de/datenschutzerklaerung.html">Datenschutz</a>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <a rel="noreferrer" target="_blank" href="https://forschung-sachsen-anhalt.de/">Forschungsportal Sachsen-Anhalt</a>
+                        </Grid>
+                    </Grid>
                 </footer>        
            </div>
         );
