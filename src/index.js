@@ -11,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 //ANPASSUNG
 /*Hier die Adressen des Backends sowie des Impressums bzw. der Kontaktwebseite eintragen*/
 
-const backendAdress="https://digikom-backend.herokuapp.com";
+const backendAdress="http://localhost:1337/admin/";
 const impressumAdress = "https://omen.cs.uni-magdeburg.de/itiamsl/deutsch/home/index.html";
 const version = "b1.1"
 
